@@ -1,0 +1,17 @@
+{
+  "platforms": [
+    "apple",
+    "android",
+    "web"
+  ],
+  "apple": {
+    "modules": [
+      "HumeEviModule"
+    ]
+  },
+  "android": {
+    "modules": [
+      "expo.modules.humeevi.HumeEviModule"
+    ]
+  }
+}
