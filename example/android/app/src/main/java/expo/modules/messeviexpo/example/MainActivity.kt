@@ -1,4 +1,4 @@
-package expo.modules.humeevi.example
+package expo.modules.messeviexpo.example
 
 import android.os.Build
 import android.os.Bundle

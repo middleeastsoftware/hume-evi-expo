@@ -3,8 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "hume-evi-expo": ["../src/index"],
-      "hume-evi-expo/*": ["../src/*"]
+      "mess-evi-expo": ["../src/index"],
+      "mess-evi-expo/*": ["../src/*"]
     }
   }
 }

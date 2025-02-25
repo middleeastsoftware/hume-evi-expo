@@ -1,57 +1,32 @@
-# hume-evi-expo
+# mess-evi-expo
 
-Hume Evi integration for Expo/React Native applications - Analyze emotions from voice in real-time.
+MESS EVI Integration Module for Expo
 
-## Installation
+# API documentation
 
-```bash
-npx expo install hume-evi-expo
+- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/mess-evi-expo/)
+- [Documentation for the main branch](https://docs.expo.dev/versions/unversioned/sdk/mess-evi-expo/)
+
+# Installation in managed Expo projects
+
+For [managed](https://docs.expo.dev/archive/managed-vs-bare/) Expo projects, please follow the installation instructions in the [API documentation for the latest stable release](#api-documentation). If you follow the link and there is no documentation available then this library is not yet usable within managed projects &mdash; it is likely to be included in an upcoming Expo SDK release.
+
+# Installation in bare React Native projects
+
+For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
+
+### Add the package to your npm dependencies
+
+```
+npm install mess-evi-expo
 ```
 
-## Usage
 
-```typescript
-import HumeEviExpoModule from 'hume-evi-expo';
 
-// Initialize the module with your API key
-await HumeEviExpoModule.initialize({
-  apiKey: 'your-hume-api-key-here'
-});
+### Configure for iOS
 
-// Analyze emotions from audio data
-const emotionResult = await HumeEviExpoModule.analyzeEmotion(audioData);
-console.log(emotionResult);
-```
+Run `npx pod-install` after installing the npm package.
 
-## API Reference
+# Contributing
 
-### initialize(config: HumeEviConfig)
-Initializes the Hume Evi module with your API credentials.
-
-```typescript
-type HumeEviConfig = {
-  apiKey: string;
-  baseUrl?: string;
-};
-```
-
-### analyzeEmotion(audioData: string): Promise<EmotionResult>
-Analyzes emotions from the provided audio data.
-
-```typescript
-type EmotionResult = {
-  joy: number;
-  sadness: number;
-  anger: number;
-  fear: number;
-  surprise: number;
-};
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT
+Contributions are very welcome! Please refer to guidelines described in the [contributing guide]( https://github.com/expo/expo#contributing).

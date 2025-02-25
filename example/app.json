@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "hume-evi-expo-example",
-    "slug": "hume-evi-expo-example",
+    "name": "mess-evi-expo-example",
+    "slug": "mess-evi-expo-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "expo.modules.humeevi.example"
+      "bundleIdentifier": "expo.modules.messeviexpo.example"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "expo.modules.humeevi.example"
+      "package": "expo.modules.messeviexpo.example"
     },
     "web": {
       "favicon": "./assets/favicon.png"

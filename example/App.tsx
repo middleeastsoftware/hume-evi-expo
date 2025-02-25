@@ -1,25 +1,25 @@
 import { useEvent } from 'expo';
-import HumeEvi, { HumeEviView } from 'hume-evi-expo';
+import MessEVI, { MessEVIView } from 'mess-evi-expo';
 import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
 
 export default function App() {
-  const onChangePayload = useEvent(HumeEvi, 'onChange');
+  const onChangePayload = useEvent(MessEVI, 'onChange');
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <Text style={styles.header}>Module API Example</Text>
         <Group name="Constants">
-          <Text>{HumeEvi.PI}</Text>
+          <Text>{MessEVI.PI}</Text>
         </Group>
         <Group name="Functions">
-          <Text>{HumeEvi.hello()}</Text>
+          <Text>{MessEVI.hello()}</Text>
         </Group>
         <Group name="Async functions">
           <Button
             title="Set value"
             onPress={async () => {
-              await HumeEvi.setValueAsync('Hello from JS!');
+              await MessEVI.setValueAsync('Hello from JS!');
             }}
           />
         </Group>
@@ -27,7 +27,7 @@ export default function App() {
           <Text>{onChangePayload?.value}</Text>
         </Group>
         <Group name="Views">
-          <HumeEviView
+          <MessEVIView
             url="https://www.example.com"
             onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
             style={styles.view}

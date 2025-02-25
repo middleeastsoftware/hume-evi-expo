@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'expo.modules.humeevi.example'
+    namespace 'expo.modules.messeviexpo.example'
     defaultConfig {
-        applicationId 'expo.modules.humeevi.example'
+        applicationId 'expo.modules.messeviexpo.example'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

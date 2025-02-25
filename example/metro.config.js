@@ -19,7 +19,7 @@ config.resolver.nodeModulesPaths = [
 ];
 
 config.resolver.extraNodeModules = {
-  'hume-evi-expo': '..',
+  'mess-evi-expo': '..',
 };
 
 config.watchFolders = [path.resolve(__dirname, '..')];
