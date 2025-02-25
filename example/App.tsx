@@ -1,5 +1,5 @@
 import { useEvent } from 'expo';
-import MessEVI, { MessEVIView } from 'mess-evi-expo';
+import MessEVI from 'mess-evi-expo';
 import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
 
 export default function App() {
@@ -26,13 +26,7 @@ export default function App() {
         <Group name="Events">
           <Text>{onChangePayload?.value}</Text>
         </Group>
-        <Group name="Views">
-          <MessEVIView
-            url="https://www.example.com"
-            onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
-            style={styles.view}
-          />
-        </Group>
+
       </ScrollView>
     </SafeAreaView>
   );
