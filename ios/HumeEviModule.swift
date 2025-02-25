@@ -1,14 +1,15 @@
 import ExpoModulesCore
 
-public class HumeEviModule: Module {
+public class HumeEviExpoModule: Module {
   // Each module class must implement the definition function. The definition consists of components
   // that describes the module's functionality and behavior.
   // See https://docs.expo.dev/modules/module-api for more details about available components.
+
   public func definition() -> ModuleDefinition {
     // Sets the name of the module that JavaScript code will use to refer to the module. Takes a string as an argument.
     // Can be inferred from module's class name, but it's recommended to set it explicitly for clarity.
     // The module will be accessible from `requireNativeModule('HumeEvi')` in JavaScript.
-    Name("HumeEvi")
+    Name("HumeEviExpo")
 
     // Sets constant properties on the module. Can take a dictionary or a closure that returns a dictionary.
     Constants([
@@ -16,7 +17,7 @@ public class HumeEviModule: Module {
     ])
 
     // Defines event names that the module can send to JavaScript.
-    Events("onChange")
+    Events("result", "error")
 
     // Defines a JavaScript synchronous function that runs the native code on the JavaScript thread.
     Function("hello") {
@@ -43,6 +44,37 @@ public class HumeEviModule: Module {
       }
 
       Events("onLoad")
+    }
+
+    Function("on") { [weak self] (eventName: String) in
+      // Event handling will be implemented later
+    }
+
+    Function("removeAllListeners") { [weak self] in
+      // Cleanup will be implemented later
+    }
+
+    AsyncFunction("startStream") { [weak self] (config: [String: Any], promise: Promise) in
+      guard let sampleRate = config["sampleRate"] as? Int,
+            let channels = config["channels"] as? Int,
+            let bitsPerSample = config["bitsPerSample"] as? Int
+      else {
+        promise.reject(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid configuration"]))
+        return
+      }
+      
+      // Stream initialization will be implemented later
+      promise.resolve(nil)
+    }
+
+    AsyncFunction("stopStream") { [weak self] (promise: Promise) in
+      // Stream cleanup will be implemented later
+      promise.resolve(nil)
+    }
+
+    AsyncFunction("sendAudioChunk") { [weak self] (data: [UInt8], promise: Promise) in
+      // Audio processing will be implemented later
+      promise.resolve(nil)
     }
   }
 }
